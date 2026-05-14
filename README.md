@@ -2,7 +2,12 @@
 
 An ASCII movie of **William Perkins** scoring a goal for **Ambrose Treacy 9/10C**.
 
-## Play it
+## Watch it on the web
+
+Just open `index.html` in any browser, or visit the deployed site on Vercel.
+It auto-plays — no typing required.
+
+## Watch it in the terminal
 
 ```bash
 python3 play.py
