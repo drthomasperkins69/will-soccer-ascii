@@ -1,11 +1,13 @@
 # William Perkins — Goal of the Season
 
-An ASCII movie of **William Perkins** scoring a goal for **Ambrose Treacy 9/10C**.
+A looping ASCII movie of **William Perkins (#9)** scoring for **Ambrose Treacy 9/10C**:
+run cycle from midfield, a stepover past the defender, a strike into the top corner,
+keeper diving the wrong way, net ripple, confetti, and a full-time scoreboard.
 
 ## Watch it on the web
 
-Just open `index.html` in any browser, or visit the deployed site on Vercel.
-It auto-plays — no typing required.
+Open `index.html` in any browser, or visit the Vercel deployment.
+It auto-plays and loops forever — no typing required.
 
 ## Watch it in the terminal
 
@@ -13,14 +15,11 @@ It auto-plays — no typing required.
 python3 play.py
 ```
 
-Press `Ctrl+C` to stop early. Best viewed in a terminal at least 75 columns wide.
+Loops forever; press `Ctrl+C` to stop. Best in a terminal at least 75 columns wide.
 
-## What you'll see
+## How it works
 
-1. Will picks up the ball at midfield
-2. He drives forward and beats a defender
-3. He bursts into the box
-4. Winds up his left foot
-5. **STRIKES it top corner!**
-6. GOOOAAAL — Ambrose Treacy 9/10C 1–0
-7. Final scoreboard with **Man of the Match: WILL**
+`movie.js` is a tiny frame compositor: it draws the pitch, goal, and net once per
+frame, then stamps sprites (runner poses, defender, keeper, ball with trail) at
+animated coordinates — 37 frames, ~8.6s per loop. `play.py` is a line-for-line
+Python port producing byte-identical frames for the terminal.
